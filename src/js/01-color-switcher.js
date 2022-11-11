@@ -25,3 +25,5 @@ function getRandomHexColor() {
     clearInterval(intervalId);
     refs.startBtn.disabled = false
   }
+
+  
