@@ -16,7 +16,9 @@ img {
   display: block;
   max-width: 100%;
 }
-.field{}
+.field{
+  text-align: center;
+}
 div.timer{
   display: flex;
   gap:50px;
