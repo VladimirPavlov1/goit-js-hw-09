@@ -7,29 +7,38 @@ const refs ={
 }
 console.log(refs)
 
-const userDelay = 0;
-
-const userStep =0;
-
-userAmount=0;
+// Напиши скрипт, який на момент сабміту форми викликає функцію createPromise(position, delay) стільки разів, скільки ввели в поле amount. Під час кожного виклику передай їй номер промісу (position), що створюється, і затримку, враховуючи першу затримку (delay), введену користувачем, і крок (step).
 
 
+refs.formEl.addEventListener('submit',onFormSubmit)
 
-// function createPromise(position, delay) {
-//   const shouldResolve = Math.random() > 0.3;
+function onFormSubmit(evt){
+  evt.preventDefault();
+  promise.then(({ position, delay }) => {
+    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+  })
+  .catch(({ position, delay }) => {
+    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+  });
+}
+
+
+function createPromise(position, delay) {
   
-//   setTimeout
-//   if (shouldResolve) {
-//     // Fulfill
-//   } else {
-//     // Reject
-//   }
-// }
+  let i=0;i<=Number(refs.amountEl.value);i+=1;
+  position=i+1;
+  delay=Number(refs.delayEl.value)+i*Number(refs.delayEl.value);
 
-// createPromise(2, 1500)
-//   .then(({ position, delay }) => {
-//     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-//   })
-//   .catch(({ position, delay }) => {
-//     console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-//   });
+  const promise = new Promise((resolve,reject)=>{
+  const shouldResolve = Math.random() > 0.3;
+  
+    setTimeout(()=>{
+      if (shouldResolve) 
+      resolve('ok'),
+      reject('not ok')
+    },delay)
+
+  return promise
+  
+})
+}
