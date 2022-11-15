@@ -1,0 +1,2 @@
+const e={formEl:document.querySelector(".form"),delayEl:document.querySelector(".js-delay"),stepEl:document.querySelector(".js-step"),amountEl:document.querySelector(".js-amount"),submitEl:document.querySelector(".js-submit")};console.log(e),e.formEl.addEventListener("submit",(function(e){e.preventDefault(),promise.then((({position:e,delay:o})=>{console.log(`✅ Fulfilled promise ${e} in ${o}ms`)})).catch((({position:e,delay:o})=>{console.log(`❌ Rejected promise ${e} in ${o}ms`)}))}));
+//# sourceMappingURL=03-promises.4b232701.js.map
