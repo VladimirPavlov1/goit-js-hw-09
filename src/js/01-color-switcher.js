@@ -14,10 +14,11 @@ function getRandomHexColor() {
   console.dir(refs.startBtn)
   
   function onStartBtnClick(){
+    refs.startBtn.disabled = true;
     intervalId=setInterval(()=>{
     refs.bodyEl.style.backgroundColor=getRandomHexColor();
     console.log('click');
-    refs.startBtn.disabled = true},1000);
+    },1000);
   }
 
   function onStopBtnClick(){
@@ -26,4 +27,3 @@ function getRandomHexColor() {
     refs.startBtn.disabled = false
   }
 
-  
