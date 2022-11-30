@@ -22,9 +22,9 @@ function createPromise(position, delay) {
   
 function onFormSubmit(evt){
   evt.preventDefault();
-  let delay = Number(refs.delayEl.value)
-  const amount = Number(refs.amountEl.value)
-  const step = Number(refs.stepEl.value)
+  let delay = Number(refs.delayEl.value);
+  const amount = Number(refs.amountEl.value);
+  const step = Number(refs.stepEl.value);
   for(let i = 1; i <= amount; i += 1) {
     createPromise(i, delay).then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -32,7 +32,7 @@ function onFormSubmit(evt){
               .catch(({ position, delay }) => {
     console.log(`❌ Rejected promise ${position} in ${delay}ms`);
               });
-    delay=delay+step;
+    delay+=step;
   }
 } 
 
